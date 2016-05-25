@@ -9,6 +9,10 @@ app.get('/test', function (req, res) {
     res.send('Hello World!');
 });
 
+
+
+
+
 app.post('/AddPoint', function (req, res) {
   console.log(req.body);
 });
