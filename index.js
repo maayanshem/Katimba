@@ -15,7 +15,12 @@ app.get('/test', function (req, res) {
 app.use("/", express.static(path.join(__dirname, '/client')));
 
 app.get('/',function(req,res){
-  res.sendfile('/index.html');
+  res.sendfile('client/index.html');
+});
+
+
+app.get('/home',function(req,res){
+  res.sendfile('client/index.html');
 });
 
 app.post('/AddPoint', function (req, res) {
