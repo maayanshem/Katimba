@@ -15,7 +15,8 @@ app.get('/test', function (req, res) {
 
 app.post('/AddPoint', function (req, res) {
   console.log(req.body);
-    res.send("");
+ currPoint = req.body;
+      res.send("");
 });
 
 app.get('/GetCurrPoint',function(req,res) {
