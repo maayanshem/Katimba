@@ -17,6 +17,6 @@ app.post('/AddPoint', function (req, res) {
 var obj = {'Name':'ID'};
 console.log(JSON.stringify(obj))
 
-app.listen(8080, function () {
-  console.log('app listening on port 8080!');
+app.listen(process.env.PORT || 3000, function(){
+  console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
