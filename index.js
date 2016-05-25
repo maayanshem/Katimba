@@ -18,13 +18,13 @@ app.get('/',function(req,res){
 
 
 app.get('/home',function(req,res){
-  res.end('Thank you');
+  res.sendfile('Client/index.html');
 });
 
 app.post('/AddPoint', function (req, res) {
   console.log(req.body);
  currPoint = req.body;
-      res.sendstatus(200);
+      res.end('200)');
 });
 
 app.get('/GetCurrPoint',function(req,res) {
