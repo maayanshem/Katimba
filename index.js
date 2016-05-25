@@ -2,6 +2,8 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var favicon = require("serve-favicon");
+var currPoint = "NoPoint : 1";
+
 
 app.use(bodyParser.json());
 app.use(favicon("icon.ico"));
@@ -11,15 +13,14 @@ app.get('/test', function (req, res) {
 
 
 
-
-
 app.post('/AddPoint', function (req, res) {
   console.log(req.body);
+    res.send("");
 });
 
 app.get('/GetCurrPoint',function(req,res) {
   console.log("Requested point");
-  res.send(JSON.stringify({a:1}));
+res.send(JSON.stringify(currPoint));
 });
 
 app.listen(process.env.PORT || 3000, function(){
