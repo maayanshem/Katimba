@@ -12,8 +12,6 @@ app.get('/test', function (req, res) {
     res.send('Hello World!');
 });
 
-app.use("/", express.static(path.join(__dirname, '/client')));
-
 app.get('/',function(req,res){
   res.sendfile('client/index.html');
 });
@@ -33,6 +31,8 @@ app.get('/GetCurrPoint',function(req,res) {
   console.log("Requested point");
 res.send(JSON.stringify(currPoint));
 });
+
+app.use("/", express.static(path.join(__dirname, '/client')));
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
