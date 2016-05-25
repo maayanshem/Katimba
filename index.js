@@ -18,7 +18,7 @@ app.get('/',function(req,res){
 
 
 app.get('/home',function(req,res){
-  res.sendfile('Client/index.html');
+  res.end('Thank you');
 });
 
 app.post('/AddPoint', function (req, res) {
