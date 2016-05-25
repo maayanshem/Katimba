@@ -1,10 +1,10 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
-
+var favicon = require("serve-favicon");
 
 app.use(bodyParser.json());
-
+app.use(favicon("icon.ico"));
 app.get('/test', function (req, res) {
     res.send('Hello World!');
 });
