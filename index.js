@@ -11,7 +11,7 @@ app.get('/test', function (req, res) {
     res.send('Hello World!');
 });
 
-
+// app.use("/public", express.static(path.join(__dirname, 'public')));
 
 app.post('/AddPoint', function (req, res) {
   console.log(req.body);
