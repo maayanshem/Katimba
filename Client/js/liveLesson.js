@@ -30,6 +30,7 @@ app.controller("liveLessonController", ["$scope", "$http", "$interval", function
                 var currentPosition = response.data;
                    
                 var checkPositonFunc = function (direction) {
+                    
                     $scope.directionCounter[direction]++;
 
                     if ($scope.previousPosition.direction == direction) {
@@ -44,12 +45,16 @@ app.controller("liveLessonController", ["$scope", "$http", "$interval", function
 
                 // Count the current position and update the prev direction
                 if (currentPosition.Right) {
+                    $scope.currentPosition = "ימין";
                     checkPositonFunc("Right");
                 } else if (currentPosition.Left) {
+                    $scope.currentPosition = "שמאל";
                     checkPositonFunc("Left");
                 } else if (currentPosition.Back) {
+                    $scope.currentPosition = "מאחור";
                     checkPositonFunc("Back");
                 } else if (currentPosition.Front) {
+                    $scope.currentPosition = "מקדימה";
                     checkPositonFunc("Front");
                 }
             });
