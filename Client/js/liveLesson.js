@@ -25,16 +25,17 @@ app.controller("liveLessonController", ["$scope", "$http", "$interval", function
 
             $http({
                 method: "GET",
-                url: "http://katimbapp.herokuapp.com/GetCurrPoint"
-            }).then(function (currentPosition) {
-
+                url: "/GetCurrPoint"
+            }).then(function (response) {
+                var currentPosition = response.data;
+                   
                 var checkPositonFunc = function (direction) {
                     $scope.directionCounter[direction]++;
 
                     if ($scope.previousPosition.direction == direction) {
                         $scope.previousPosition.count++;
                     } else {
-                        $scpoe.previousPosition = {
+                        $scope.previousPosition = {
                             direction: direction,
                             count: 0
                         };
