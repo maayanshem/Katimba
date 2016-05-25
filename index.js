@@ -17,6 +17,6 @@ app.post('/AddPoint', function (req, res) {
 var obj = {'Name':'ID'};
 console.log(JSON.stringify(obj))
 
-app.listen(3000, function () {
-  console.log('app listening on port 3000!');
+app.listen(8080, function () {
+  console.log('app listening on port 8080!');
 });
