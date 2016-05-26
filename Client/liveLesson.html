@@ -29,19 +29,19 @@
 <body ng-controller="liveLessonController">
     <div id="container" ng-if="!bIsFollow">
 
-        
 
-        <div  ng-if="directionCounter">
+
+        <div ng-if="directionCounter">
 
             <h1>
                 דוח סיכום
                
             </h1>
             <div id="conclusion">
-            <br> היית {{directionCounter.Right}} שניות בימין
-            <br> היית {{directionCounter.Left}} שניות בשמאל
-            <br> היית {{directionCounter.Back}} שניות מאוחר
-            <br> היית {{directionCounter.Front}} שניות מקדימה
+                <br> היית {{directionCounter.Right}} שניות בימין
+                <br> היית {{directionCounter.Left}} שניות בשמאל
+                <br> היית {{directionCounter.Back}} שניות מאוחר
+                <br> היית {{directionCounter.Front}} שניות מקדימה
             </div>
 
 
@@ -93,9 +93,20 @@
         <br>
         <br>
 
-        <button ng-click="stopFollow()">
-            סיים מעקב
-        </button>
+        <!--Maayans code-->
+
+        <div class="center">
+            <canvas class="col-md-8 col-md-offset-2" canvasboard width="600" height="275"></canvas>
+        </div>
+
+        <div>
+            <button id="BtnGoUp" ng-click="stopFollow()">
+                סיים מעקב
+            </button>
+        </div>
+
+
+
     </div>
 </body>
 
