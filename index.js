@@ -17,9 +17,14 @@ app.get('/',function(req,res){
 });
 
 
+
+
 app.get('/home',function(req,res){
   res.sendfile('Client/index.html');
 });
+
+
+
 
 app.post('/AddPoint', function (req, res) {
   console.log(req.body);
@@ -36,4 +41,4 @@ app.use("/", express.static(path.join(__dirname, '/Client')));
 
 app.listen(process.env.PORT || 3000, function(){
   console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
+}); 

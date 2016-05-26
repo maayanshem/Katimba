@@ -1,0 +1,16 @@
+@import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
+h1 {
+    font-family: 'Alef Hebrew';
+    text-align: center;
+    font-size: 40px;
+}
+
+#homepage {
+    width: 8%;
+    float: right
+   
+}
+
+table{
+    margin: 0 auto;
+}

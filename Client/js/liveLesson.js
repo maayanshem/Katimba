@@ -13,7 +13,6 @@ app.controller("liveLessonController", ["$scope", "$http", "$interval", function
         $scope.directionCounter = {
             Right: 0,
             Left: 0,
-            Front: 0,
             Back: 0
         };
 
@@ -54,9 +53,6 @@ app.controller("liveLessonController", ["$scope", "$http", "$interval", function
                 } else if (currentPosition.Back) {
                     $scope.currentPosition = "מאחור";
                     checkPositonFunc("Back");
-                } else if (currentPosition.Front) {
-                    $scope.currentPosition = "מקדימה";
-                    checkPositonFunc("Front");
                 }
             });
 
