@@ -68,6 +68,7 @@ app.controller("liveLessonController", ["$scope", "$http", "$interval", function
 
         $interval.cancel(stopFollow);
         stopFollow = undefined;
+        
     };
 
 
