@@ -1,33 +1,98 @@
 @import url(http://fonts.googleapis.com/earlyaccess/alefhebrew.css);
-
-body{
+body {
     font-family: 'Alef Hebrew';
     text-align: center;
     font-size: 20px;
+    background-color: antiquewhite;
+    background-image: url(Green_School_Board_PNG_Picture.png), url(../img/intro-bg.jpg);
+    background-size: contain, cover;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+    height: 100%;
 }
-
-.green-squre{
-    background-color: green;
+#homepage {
+    width: 8%;
+    float: right;
+}
+h1 {
+    font-size: 70px;
+    font-family: 'Alef Hebrew';
+    margin-top: 40px;
+    color: ghostwhite;
+}
+.green-squre {
+    background-color: #3bd43b;
     width: 100%;
     height: 100%;
     position: absolute;
+    animation: changeGreenColor 10s infinite ease-in reverse;
 }
-
-.red-squre{
+@keyframes changeGreenColor {
+    0% {
+        background-color: #3bd43b;
+    }
+    50% {
+        background-color: #80ef80;
+    }
+    100% {
+        background-color: #3bd43b;
+    }
+}
+.red-squre {
     background-color: red;
     width: 100%;
     height: 100%;
     position: absolute;
+    animation: changeRedColor 10s infinite ease-in reverse;
 }
-
-.yellow-squre{
+@keyframes changeRedColor {
+    0% {
+        background-color: #ff0000;
+    }
+    50% {
+        background-color: #fd5151;
+    }
+    100% {
+        background-color: #ff0000;
+    }
+}
+.yellow-squre {
     background-color: yellow;
     width: 100%;
     height: 100%;
     position: absolute;
+    animation: changeYellowColor 10s infinite ease-in reverse;
 }
-
-.alert-text{
+@keyframes changeYellowColor {
+    0% {
+        background-color: #ffc134;
+    }
+    50% {
+        background-color: #fff03a;
+    }
+    100% {
+        background-color: #ffc134;
+    }
+}
+.alert-text {
     color: white;
     font-size: 40px;
+}
+#start {
+    font-size: 120px;
+    margin-top: 30px;
+}
+#start:hover {
+    font-size: 135px;
+    color: #dbd5d1;
+    cursor: pointer
+}
+#conclusion {
+    margin-top: 100px;
+    font-size: 30px;
+    color: ghostwhite;
+}
+#info {
+    /*margin-bottom: 30px;*/
+    margin-top: 110px;
 }

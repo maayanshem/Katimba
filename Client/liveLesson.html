@@ -21,73 +21,69 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
     <script src="js/liveLesson.js"></script>
 </head>
-<body ng-controller="liveLessonController">
-    <div ng-if="!bIsFollow">
 
-        <br>
-        <br>
-        <br>
-        
+<body ng-controller="liveLessonController">
+    <a href="index.html"> <img id="homepage" src="img/122798-matte-red-and-white-square-icon-business-home5.png"> </a>
+    <div id="container" ng-if="!bIsFollow">
         <div ng-if="directionCounter">
             <h1>
-                דוח סיכום
-                <br>
-                --------
+                דוח סיכום  
             </h1>
-            <br>
-            היית {{directionCounter.Right}} שניות בימין
-            <br>
-            היית {{directionCounter.Left}} שניות בשמאל
-            <br>
-            היית {{directionCounter.Back}} שניות מאוחר
-            <br>
-            היית {{directionCounter.Front}} שניות מקדימה
+            <div id="conclusion">
+                <br> היית {{directionCounter.Right}} שניות בימין
+                <br> היית {{directionCounter.Left}} שניות בשמאל
+                <br> היית {{directionCounter.Back}} שניות מאחור
+            </div>
         </div>
-        
-        
+
         <br>
         <br>
         <br>
-        
-        
-        <button ng-click="startFollow()">
-            התחל מעקב
-        </button>
-        
+
+        <div dir="rtl" id="info" ng-if="directionCounter == null">
+            <input placeholder="שם השיעור">
+            <input placeholder="משך זמן משוער">
+            <div id="start" ng-click="startFollow()">
+                התחל מעקב
+            </div>
+        </div>
     </div>
 
-    <div ng-if="bIsFollow" ng-class="{'green-squre': previousPosition.count <= 30 , 'yellow-squre': (previousPosition.count > 30) && (previousPosition.count <= 60) , 'red-squre': previousPosition.count > 60}">
+    <div ng-if="bIsFollow" ng-class="{'green-squre': previousPosition.count <= 15 , 'yellow-squre': (previousPosition.count > 15) && (previousPosition.count <= 30) , 'red-squre': previousPosition.count > 30}">
+
+        <br>
+        <br>
+        <br>
         
-        <br>
-        <br>
-        <br>
         <span ng-if="currentPosition">
             מקומך הנוכחי - {{currentPosition}}
         </span>
-        <br>
-        <br>
         
-        <span ng-if="previousPosition.count <= 30" class="alert-text">
+        <br>
+        <br>
+
+        <span ng-if="previousPosition.count <= 15" class="alert-text">
             !איזה יופי
         </span>
-        <span ng-if="(previousPosition.count > 30) && (previousPosition.count <= 60)" class="alert-text">
+        <span ng-if="(previousPosition.count > 15) && (previousPosition.count <= 30)" class="alert-text">
             !אתה כבר מלא זמן תקוע באותו המקום
         </span>
-        <span ng-if="previousPosition.count > 60" class="alert-text">
+        <span ng-if="previousPosition.count > 30" class="alert-text">
             !תזיז ת'תחת כבר מהמקום הזה
         </span>
-        
+
         <br>
         <br>
         <br>
-        
+
         <button ng-click="stopFollow()">
             סיים מעקב
         </button>
     </div>
 </body>
-</html> 
+
+</html>
